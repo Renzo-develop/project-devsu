@@ -1,0 +1,69 @@
+version: "3.8"
+services:
+  msusuario-devsu:
+    build: .\ms-usuario
+    container_name: "msusuario-devsu"
+    ports:
+      - 8080:8080
+    depends_on:
+      oracle:
+        condition: service_healthy
+      configserver:
+        condition: service_healthy
+    networks:
+      - devsu
+  mstarjeta-devsu:
+    build: .\ms-tarjeta
+    container_name: "mstarjeta-devsu"
+    ports:
+      - 8081:8081
+    depends_on:
+      oracle:
+        condition: service_healthy
+      configserver:
+        condition: service_healthy
+    networks:
+      - devsu      
+  oracle: 
+    image: container-registry.oracle.com/database/free:latest
+    hostname: oracle
+    container_name: oracle
+    environment:
+      ORACLE_PDB: ORCLPDB1
+      ORACLE_PWD: RENZO123
+    ports:
+      - 1521:1521
+    volumes:
+      - ./data/db:/opt/oracle/oradata
+    healthcheck:
+      test: [ "CMD", "/opt/oracle/checkDBStatus.sh"]
+      interval: 2s  
+    networks:
+      - devsu
+      
+  configserver:
+    build: .\config-server
+    container_name: "configserver-devsu"
+    ports:
+      - 8888:8888
+    healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost:8888/actuator/health"]
+        interval: 10s
+        retries: 3
+        start_period: 10s
+    networks:
+      - devsu         
+
+  apigateway-devsu:
+    build: .\api-gateway
+    container_name: "apigateway-devsu"
+    ports:
+      - 1000:1000
+    depends_on:
+      configserver:
+        condition: service_healthy
+    networks:
+      - devsu    
+ 
+networks:
+  devsu:

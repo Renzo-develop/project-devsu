@@ -1,0 +1,361 @@
+{
+	"info": {
+		"_postman_id": "4edf4580-cb98-4c2f-920d-d5de7b17349f",
+		"name": "Devsu",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24401939",
+		"_collection_link": "https://www.postman.com/grey-capsule-716981/workspace/youtube-workspace/collection/24401939-4edf4580-cb98-4c2f-920d-d5de7b17349f?action=share&source=collection_link&creator=24401939"
+	},
+	"item": [
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Hyperx\",\r\n    \"genero\": \"F\",\r\n    \"edad\": 21,\r\n    \"identificacion\": 45632222,\r\n    \"direccion\": \"Miami\",\r\n    \"telefono\": 903692245,\r\n    \"contraseña\": \"secret\",\r\n    \"estado\": \"true\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:1000/clientes/create",
+							"host": [
+								"localhost"
+							],
+							"port": "1000",
+							"path": [
+								"clientes",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:1000/clientes",
+							"host": [
+								"localhost"
+							],
+							"port": "1000",
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FindById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:1000/clientes/findbyid/2",
+							"host": [
+								"localhost"
+							],
+							"port": "1000",
+							"path": [
+								"clientes",
+								"findbyid",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"clienteId\":\"2\",\r\n    \"direccion\": \"Urb Alisos, Comas\",\r\n    \"telefono\": 965221448,\r\n    \"estado\": \"Activo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:1000/clientes/edit",
+							"host": [
+								"localhost"
+							],
+							"port": "1000",
+							"path": [
+								"clientes",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:1000/clientes/delete/522",
+							"host": [
+								"localhost"
+							],
+							"port": "1000",
+							"path": [
+								"clientes",
+								"delete",
+								"522"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cuentas",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"numeroCuenta\": \"123900\",\r\n    \"tipoCuenta\": \"AHORROS\",\r\n    \"saldo\": 100,\r\n    \"estado\": \"True\",\r\n    \"clienteId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:1000/cuentas/create",
+							"host": [
+								"localhost"
+							],
+							"port": "1000",
+							"path": [
+								"cuentas",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:1000/cuentas",
+							"host": [
+								"localhost"
+							],
+							"port": "1000",
+							"path": [
+								"cuentas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cuentaId\": 3,\r\n    \"saldo\": 1000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:1000/cuentas/edit",
+							"host": [
+								"localhost"
+							],
+							"port": "1000",
+							"path": [
+								"cuentas",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:1000/cuentas/delete/522",
+							"host": [
+								"localhost"
+							],
+							"port": "1000",
+							"path": [
+								"cuentas",
+								"delete",
+								"522"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movimientos",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"valor\": -1000,\r\n    \"fecha\": \"12-02-2024\",\r\n    \"cuentaId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:1000/movimientos/create",
+							"host": [
+								"localhost"
+							],
+							"port": "1000",
+							"path": [
+								"movimientos",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:1000/movimientos",
+							"host": [
+								"localhost"
+							],
+							"port": "1000",
+							"path": [
+								"movimientos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reporte",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:1000/movimientos/reportes?fechainicial=01-01-2024&fechafinal=26-03-2024&clienteId=1",
+							"host": [
+								"localhost"
+							],
+							"port": "1000",
+							"path": [
+								"movimientos",
+								"reportes"
+							],
+							"query": [
+								{
+									"key": "fechainicial",
+									"value": "01-01-2024"
+								},
+								{
+									"key": "fechafinal",
+									"value": "26-03-2024"
+								},
+								{
+									"key": "clienteId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"movimientoId\": 1,\r\n    \"fecha\": \"01-01-2024\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:1000/movimientos/edit",
+							"host": [
+								"localhost"
+							],
+							"port": "1000",
+							"path": [
+								"movimientos",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:1000/movimientos/delete/522",
+							"host": [
+								"localhost"
+							],
+							"port": "1000",
+							"path": [
+								"movimientos",
+								"delete",
+								"522"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,16 @@
+server:
+  port: 1000
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: router01
+          uri: http://msusuario-devsu:8080
+          predicates:
+            - Path=/clientes/**
+        - id: router02
+          uri: http://mstarjeta-devsu:8081
+          predicates:
+            - Path=/cuentas/**

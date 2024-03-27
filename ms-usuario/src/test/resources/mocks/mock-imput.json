@@ -1,0 +1,10 @@
+{
+  "nombre": "Basco",
+  "genero": "M",
+  "edad": 31,
+  "identificacion": 45632222,
+  "direccion": "SMP",
+  "telefono": 903692245,
+  "contraseña": "secret",
+  "estado": "true"
+}
